@@ -1,0 +1,182 @@
+/*monokai*/
+@define-color fgcolour #ffffff;
+@define-color bgcolour #272822;
+@define-color accent #66d9ef;
+
+* {
+	border: 6;
+	border-radius: 26;
+	font-family: "Operator Mono", "Iosevka Nerd Font", "Source Hans Sans", "Hack Nerd Font Complete";
+	font-size: 14px;
+	min-height: 24px;
+}
+
+window#waybar {
+	background: transparent;
+}
+.modules-right {
+	background-color: @bgcolour;
+	margin: 6px 6px 0 0;
+}
+
+.modules-left {
+	background-color: @bgcolour;
+	margin: 6px 0 0 6px;
+}
+
+.modules-center {
+	background-color: @bgcolour;
+	margin: 6px 0 0 0;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#window {
+    margin-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+    color: transparent;
+	background: transparent;
+}
+
+
+#workspaces {
+	border-radius: 26px;
+	background: @bgcolour;
+	transition: none;
+}
+
+#workspaces button {
+	transition: none;
+	color: @colorfg;
+	background: transparent;
+	font-size: 16px;
+}
+
+#workspaces button.active {
+	transition: none;
+	color: @accent;
+	background: transparent;
+	font-size: 16px;
+}
+
+#workspaces button.focused {
+	transition: none;
+	color: @accent;
+	background: transparent;
+	font-size: 16px;
+}
+
+#workspaces button.visible {
+	transition: none;
+	color: @accent;
+	background: @bgcolour;
+	font-size: 16px;
+}
+
+#workspaces button:hover {
+	transition: none;
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+
+#network {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @colorfg;
+	background: @bgcolour;
+}
+
+#pulseaudio {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @colorfg;
+	background: @bgcolour;
+}
+
+#custom-temperature {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @fgcolour;
+	background: @bgcolour;
+}
+
+#custom-memory {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @colorfg;
+	background: @bgcolour;
+}
+
+#clock {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @bgcolour;
+	background: @accent;
+}
+
+#tray {
+	background-color: @bgcolour;
+	padding-left: 0;
+	padding-right: 16px;
+	border-radius: 26px;
+}
+
+#battery {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @fgcolour;
+	background: @bgcolour;
+
+}
+
+#bluetooth {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @fgcolour;
+	background: @bgcolour;
+
+}
+
+#custom-disk {
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	color: @fgcolour;
+	background: @bgcolour;
+}
+
+#custom-icon1 {
+	color: @bgcolour;
+	background: @accent;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-radius: 26px;
+}
+
+#custom-icon2 {
+	color: @fgcolour;
+	background: @bgcolour;
+	padding-left: 16px;
+	padding-right: 8px;
+	border-radius: 26px;
+}

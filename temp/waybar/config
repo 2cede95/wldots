@@ -1,0 +1,102 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "gtk-layer-shell": false, //required for hyprland tags
+    "modules-left": ["custom/icon1", "battery", "pulseaudio", "network", "bluetooth", "custom/icon2", "tray" ],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": [ "custom/disk", "custom/temperature", "custom/memory", "clock"],
+
+    "wlr/workspaces": {
+	"sort-by-name": true,
+	"all-outputs": true,
+	"active-only": false,
+	"on-click": "activate",
+	"format": " {icon} ",
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"10": "10",
+		"default": "{icon}",
+
+	}
+    },
+
+    "custom/icon2": {
+        "format": " :",
+        "interval": "once",
+        "tooltip": false
+    },
+   
+   "custom/icon1": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+ 
+        "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+ 
+    "clock": {
+        "format": "{:%a, %d | %I:%M %p}",
+        "interval": 30
+    },
+
+    "custom/memory": {
+    	    "exec": "~/.config/waybar/memory.sh",
+	    "format": " {} GiB",
+	    "interval": 5
+	},
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging":"  {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+	"interval": 60
+    },
+
+    "network": {
+        "format-wifi": "  {signaldBm}dB",
+        "format-disconnected": "睊",
+	"interval": 10
+    },
+
+    "pulseaudio": {
+        "format": "墳 {volume}%",
+        "format-muted": "ﱝ",
+        "format-icons": {
+            "headphone": " ",
+            "default": ["婢", "奔", "墳"]
+        },
+    },
+
+    "custom/temperature": {
+        "exec": "~/.config/waybar/cpu.sh",
+	"format": " {}",
+	"interval": 5,
+	"tooltip": false
+    },
+
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": " {status}",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+},
+    "disk": {
+    	    "exec": "~/.config/waybar/disk.sh",
+	    "format":"/ {}",
+	    "interval": 300,
+	}
+}
