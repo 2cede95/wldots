@@ -1,0 +1,107 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "gtk-layer-shell": false, //required for hyprland tags
+    "modules-left": ["custom/launcher", "battery", "custom/volume", "network", "bluetooth", "custom/trayicon", "tray" ],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": [ "custom/disk", "custom/temperature", "custom/memory", "custom/time"],
+
+    "wlr/workspaces": {
+	"sort-by-name": true,
+	"all-outputs": true,
+	"active-only": false,
+	"on-click": "activate",
+	"format": " {icon} ",
+	"format-icons": {
+		"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",
+		"8": "8",
+		"9": "9",
+		"10": "10",
+		"default": "{icon}",
+
+	}
+    },
+
+    "custom/trayicon": {
+        "format": " :",
+        "interval": "once",
+        "tooltip": false
+    },
+   
+   "custom/launcher": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false,
+	"on-click": "wofi"
+    },
+ 
+        "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+ 
+    "custom/time": {
+    	"exec": "~/.config/waybar/time.sh",
+        "format": "{}",
+        "interval": 30
+    },
+
+    "custom/memory": {
+    	"exec": "~/.config/waybar/memory.sh",
+	"format": "  {}GiB",
+	"interval": 5,
+	"on-click": "alacirtty -e htop"
+	},
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging":"  {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+	"interval": 60
+    },
+
+    "network": {
+        "format-wifi": "  {signaldBm}dB",
+        "format-disconnected": "睊",
+	"interval": 10,
+	"on-click": "alacritty -e nmtui",
+	"on-click-right": "alacritty --hold -e nordvpn status"
+    },
+
+    "custom/volume": {
+        "format": "{}",
+	"interval": "once",
+	"exec": "~/.config/waybar/volume.sh",
+	"signal": 8
+    },
+
+    "custom/temperature": {
+    	"exec": "~/.config/waybar/temperature.sh",
+        "format": " {}°C",
+	"interval": 5,
+	"on-click": "alacritty -e btop"
+    },
+
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": " {status}",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"on-click": "blueberry"
+},
+    "custom/disk": {
+    	"exec": "~/.config/waybar/disk.sh",
+	"format":"/ {}iB",
+	"interval": 300,
+	"on-click": "Nemo"
+	}
+}

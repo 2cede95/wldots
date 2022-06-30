@@ -1,0 +1,54 @@
+/*monokai*/
+@define-color fgcolour #ffffff;
+@define-color bgcolour #272822;
+@define-color bgcolour2 #3e3d32;
+@define-color bgcolour3 #75715e;
+@define-color accent #66d9ef;
+
+* {
+    font-family: "Operator Mono", "Iosevka Nerd Font", "Source Hans Sans", "Hack Nerd Font Complete";
+    font-size: 18px;
+    font-weight: 600;
+    color: @accent;
+}
+
+
+#window {
+    margin: 0px;
+    border: 2px solid;
+    border-color: @accent;
+    border-radius: 25px;
+    background-color: @bgcolour;
+    color:  @fgcolour;
+}
+
+#input {
+    margin: 15px;
+    background-color: @bgcolour3;
+    color: @fgcolour;
+    border-radius: 25px;
+}
+
+#scroll {
+    margin-bottom: 15px;
+}
+
+#entry {
+    margin: 0px 15px;
+    color: @fgcolour;
+    background-color: @bgcolour;
+}
+
+#entry:selected {
+    background-color: @bgcolour2;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    color: @fgcolour;
+}
+
+#entry > box {
+    margin-left: 16px;
+    color: @fgcolour;
+}
+
